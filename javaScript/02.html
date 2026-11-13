@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 2</title>
+
+    <style>
+        .cinco {
+            display: inline-block;
+            animation: rodar 2s linear infinite;
+        }
+
+        @keyframes rodar {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<input type="text" id="numeros" placeholder="Digite números">
+
+<button onclick="verificar()">Verificar</button>
+
+<div id="resultado"></div>
+
+<script>
+
+function verificar() {
+
+    let valor = document.getElementById("numeros").value;
+
+    let resultado = "";
+
+    for (let n of valor) {
+
+        if (n === "5") {
+            resultado += '<span class="cinco">5</span>';
+        } else {
+            resultado += n;
+        }
+
+    }
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+
+</script>
+
+</body>
+</html>

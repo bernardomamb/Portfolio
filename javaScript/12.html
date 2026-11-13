@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let texto = prompt("Digite um texto:");
+
+let palavras = texto.split(" ");
+
+palavras.sort(function(a, b) {
+
+    return a.localeCompare(b);
+
+});
+
+alert(palavras.join(" "));
+
+</script>
+
+</body>
+</html>

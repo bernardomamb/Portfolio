@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let numeros = [];
+
+for (let i = 0; i < 15; i++) {
+
+    let n = Number(prompt("Digite o número " + (i + 1)));
+
+    numeros.push(n);
+
+}
+
+let maior = Math.max(...numeros);
+
+let resultado = [];
+
+for (let n of numeros) {
+
+    resultado.push(n / maior);
+
+}
+
+alert("Maior valor: " + maior +
+      "\nVetor original: " + numeros +
+      "\nVetor dividido: " + resultado);
+
+</script>
+
+</body>
+</html>

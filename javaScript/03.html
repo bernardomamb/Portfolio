@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let entrada = prompt("Digite números separados por ;");
+
+let numeros = entrada.split(";");
+
+let soma = 0;
+
+for (let n of numeros) {
+    soma += Number(n);
+}
+
+let factorial = 1;
+
+if (Number.isInteger(soma) && soma >= 0 && soma <= 170) {
+
+    for (let i = 1; i <= soma; i++) {
+        factorial *= i;
+    }
+
+    alert("Soma: " + soma +
+          "\nFactorial: " + factorial);
+
+} else {
+    alert("A soma deve ser um inteiro entre 0 e 170.");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let texto = prompt("Digite um texto:");
+
+let resultado = "";
+
+for (let letra of texto) {
+
+    if (!"aeiouáéíóúAEIOUÁÉÍÓÚ".includes(letra)) {
+
+        resultado += letra;
+
+    }
+
+}
+
+alert(resultado);
+
+</script>
+
+</body>
+</html>

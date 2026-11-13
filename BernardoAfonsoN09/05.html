@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: Georgia, serif; padding: 24px; background: #f9f9f9; color: #555; line-height: 1.6; max-width: 600px; margin: auto; }
+  h2 { font-family: sans-serif; color: #111; margin: 0 0 4px 0; }
+  .sub { font-family: sans-serif; color: #888; font-size: 14px; margin-bottom: 24px; }
+
+  /* 1. LETRA CAPITAL */
+  .primeiro-paragrafo::first-letter {
+    float: left;
+    font-size: 48px;
+    line-height: 0.8;
+    font-weight: bold;
+    margin-right: 8px;
+    color: #888;
+    font-family: sans-serif;
+  }
+
+  /* 2. ASPAS DECORATIVAS */
+  .citacao {
+    border-left: 3px solid #e5e5e5;
+    padding-left: 16px;
+    margin: 20px 0;
+    position: relative;
+  }
+  .citacao::before {
+    content: "“";
+    font-size: 40px;
+    color: #999;
+    line-height: 0;
+    display: block;
+    margin-bottom: 16px;
+    font-family: Georgia, serif;
+  }
+  .citacao p { color: #111; font-size: 18px; margin: 0; }
+
+  /* 3. RESUMO CORTADO NA 3ª LINHA */
+  .resumo {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* muda pra 2 ou 4 e vê o que acontece */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 4. SELEÇÃO COM COR PRÓPRIA */
+  ::selection {
+    background: #111;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<h2>Artigo com tipografia cuidada</h2>
+<p class="sub">Letra capital, aspas decorativas, resumo cortado e seleção com cor própria.</p>
+
+<p class="primeiro-paragrafo">O bom design começa pelo texto. Uma letra capital e um espaçamento bem pensado mudam a forma como o leitor sente a página.</p>
+
+<div class="citacao">
+  <p>Escreve para quem lê, e não para quem escreve.</p>
+</div>
+
+<p class="resumo">
+  Este resumo é bem mais longo do que cabe no espaço. O CSS corta o texto ao fim da terceira linha e acrescenta reticências sozinho, sem ser preciso contar palavras. Experimenta mudar o número de linhas e ver o que acontece com o texto quando você muda de 3 para 2 ou 4 linhas. O CSS faz tudo.
+</p>
+
+<p style="margin-top:20px;">Seleciona este texto com o rato para veres a cor de seleção personalizada.</p>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* MUDA SÓ AQUI E TUDO MUDA */
+  :root {
+    --cor-primaria: #9b1c1c; /* cor dos números e botão */
+    --raio: 14px;            /* arredondamento dos cartões */
+    --espaco: 20px;          /* espaço interno */
+  }
+
+  body { font-family: sans-serif; background: #fcfcfc; padding: 24px; color: #333; }
+  h2 { color: #111; margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 24px; }
+
+  .painel {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #e8e8e8;
+    border-radius: var(--raio);
+    padding: var(--espaco);
+  }
+
+  .card strong {
+    font-size: 26px;
+    color: var(--cor-primaria); /* usa a variável */
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .card span {
+    color: #777;
+    font-size: 15px;
+  }
+
+  .relatorio {
+    grid-column: span 3;
+    background: white;
+    border: 1px solid #e8e8e8;
+    border-radius: var(--raio);
+    padding: var(--espaco);
+  }
+
+  .relatorio strong { color: #111; display: block; margin-bottom: 8px; }
+  .relatorio p { color: #777; font-size: 14px; margin: 0 0 16px 0; }
+
+  .btn {
+    background: var(--cor-primaria); /* usa a variável */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    .painel { grid-template-columns: 1fr; }
+    .relatorio { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<h2>Painel com tema por variáveis</h2>
+<p class="sub">Muda só os 3 valores do :root e o painel inteiro muda de aspeto.</p>
+
+<div class="painel">
+  <div class="card">
+    <strong>1 240</strong>
+    <span>Visitas</span>
+  </div>
+
+  <div class="card">
+    <strong>86</strong>
+    <span>Vendas</span>
+  </div>
+
+  <div class="card">
+    <strong>4,8</strong>
+    <span>Avaliação</span>
+  </div>
+
+  <div class="relatorio">
+    <strong>Relatório do mês</strong>
+    <p>Tudo aqui depende das três variáveis.</p>
+    <button class="btn">Ver detalhes</button>
+  </div>
+</div>
+
+</body>
+</html>

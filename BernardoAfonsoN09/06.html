@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: sans-serif; padding: 20px; background: #f9f9f9; color: #333; }
+  h2 { color: #111; margin: 0 0 6px 0; }
+  .sub { color: #888; margin: 0 0 20px 0; }
+
+  /* CAIXA PADRÃO IGUAL DO PRINT */
+  .caixa {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  /* O LAYOUT */
+  .blog {
+    display: grid;
+    grid-template-columns: 1fr 220px; /* artigo grande + sidebar pequena */
+    gap: 16px;
+  }
+
+  /* cabeçalho e rodapé ocupam as 2 colunas */
+  .header { grid-column: span 2; }
+  .footer { grid-column: span 2; color: #777; font-size: 14px; }
+
+  .header { font-weight: bold; }
+  .artigo { min-height: 200px; }
+  .artigo h3 { margin: 0 0 8px 0; color: #111; }
+  .artigo p, .sidebar p { color: #888; line-height: 1.5; margin: 0; }
+  .sidebar h3 { margin: 0 0 12px 0; color: #111; font-size: 16px; }
+  .sidebar p { margin-bottom: 10px; }
+
+  /* NO TELEMÓVEL FICA TUDO EM 1 COLUNA */
+  @media (max-width: 650px) {
+    .blog { grid-template-columns: 1fr; }
+    .header, .footer { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<h2>Página de blog</h2>
+<p class="sub">Cabeçalho, artigo, barra lateral e rodapé. No telemóvel ficam numa coluna.</p>
+
+<div class="blog">
+  <div class="caixa header">O meu blog</div>
+
+  <div class="caixa artigo">
+    <h3>Como aprendi CSS</h3>
+    <p>Texto do artigo. Redimensiona a janela para veres a barra lateral passar para baixo do artigo.</p>
+  </div>
+
+  <div class="caixa sidebar">
+    <h3>Categorias</h3>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>Dicas</p>
+  </div>
+
+  <div class="caixa footer">2026. Todos os direitos reservados.</div>
+</div>
+
+</body>
+</html>

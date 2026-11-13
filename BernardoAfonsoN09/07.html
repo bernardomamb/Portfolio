@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { font-family: sans-serif; padding: 20px; background: #f9f9f9; color: #333; }
+  h2 { color: #111; margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+  /* CONTAINER DOS 3 CARTÕES */
+  .noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 800px;
+  }
+
+  /* CADA CARTÃO */
+  .card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 16px;
+    /* ISSO FAZ O BOTÃO FICAR NA BASE */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .thumb {
+    background: linear-gradient(#eee, #ccc);
+    border-radius: 10px;
+    height: 140px;
+    overflow: hidden;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .titulo { color: #111; font-weight: bold; margin: 14px 0 8px 0; }
+  .texto { color: #777; line-height: 1.5; font-size: 15px; margin: 0; }
+
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0; }
+  .tag { border: 1px solid #e5e5e5; border-radius: 20px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+
+  /* O TRUQUE DO BOTÃO NA BASE */
+  .btn {
+    margin-top: auto; /* empurra o botão pra baixo */
+    padding-top: 16px; /* espaço do conteúdo */
+  }
+  .btn button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn button:hover { background: #f5f5f5; }
+</style>
+</head>
+<body>
+
+<h2>Cartões de notícias</h2>
+<p class="sub">Três cartões com a mesma altura e o botão sempre na base.</p>
+
+<div class="noticias">
+
+  <div class="card">
+    <div class="thumb"><img src="https://picsum.photos/400/200?random=20" alt=""></div>
+    <div class="titulo">Novo curso de HTML</div>
+    <p class="texto">Aprende a criar páginas do zero, com exercícios práticos em cada aula.</p>
+    <div class="tags"><span class="tag">HTML</span><span class="tag">Iniciante</span></div>
+    <div class="btn"><button>Ler mais</button></div>
+  </div>
+
+  <div class="card">
+    <div class="thumb"><img src="https://picsum.photos/400/200?random=21" alt=""></div>
+    <div class="titulo">Guia completo de flexbox e grid</div>
+    <p class="texto">Um texto mais comprido, para veres que os cartões continuam com a mesma altura e o botão fica sempre na base, mesmo quando o conteúdo muda de tamanho.</p>
+    <div class="tags"><span class="tag">CSS</span><span class="tag">Layout</span><span class="tag">Guia</span><span class="tag">Avançado</span></div>
+    <div class="btn"><button>Ler mais</button></div>
+  </div>
+
+  <div class="card">
+    <div class="thumb"><img src="https://picsum.photos/400/200?random=22" alt=""></div>
+    <div class="titulo">Dicas de tipografia</div>
+    <p class="texto">Letra capital, aspas e corte de texto.</p>
+    <div class="tags"><span class="tag">Design</span></div>
+    <div class="btn"><button>Ler mais</button></div>
+  </div>
+
+</div>
+
+</body>
+</html>

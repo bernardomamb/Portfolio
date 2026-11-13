@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 1</title>
+</head>
+<body>
+
+<script>
+let numeros = [];
+let negativosIguais = 0;
+let ultimoNegativo = null;
+
+while (negativosIguais < 3) {
+
+    let n = Number(prompt("Digite um número:"));
+
+    if (n < 0) {
+
+        if (n === ultimoNegativo) {
+            negativosIguais++;
+        } else {
+            negativosIguais = 1;
+        }
+
+        ultimoNegativo = n;
+
+    } else {
+        negativosIguais = 0;
+        ultimoNegativo = null;
+    }
+
+    numeros.push(n);
+}
+
+let primos = 0;
+let neutros = 0;
+let somaNegativos = 0;
+
+for (let n of numeros) {
+
+    if (n === 0) {
+        neutros++;
+    }
+
+    if (n < 0) {
+        somaNegativos += n;
+    }
+
+    if (n > 1) {
+        let primo = true;
+
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                primo = false;
+                break;
+            }
+        }
+
+        if (primo) {
+            primos++;
+        }
+    }
+}
+
+alert("Primos: " + primos +
+      "\nQuíntuplo dos neutros: " + (neutros * 5) +
+      "\nSoma dos negativos: " + somaNegativos);
+
+</script>
+
+</body>
+</html>

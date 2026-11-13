@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; padding: 24px; background: #f9f9f9; }
+  h2 { margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 800px;
+  }
+
+  .item {
+    position: relative;
+    height: 220px;
+    border-radius: 14px;
+    overflow: hidden; /* esconde o que aumenta fora */
+    background: #ddd;
+    cursor: pointer;
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* animação lenta do zoom */
+    transition: transform 0.5s ease;
+  }
+
+  /* quando passa o rato, a foto aumenta */
+  .item:hover img {
+    transform: scale(1.15);
+  }
+
+  /* gradiente + legenda escondida */
+  .legenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 14px 14px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    color: white;
+    box-sizing: border-box;
+    
+    /* começa escondida embaixo */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  /* quando passa o rato, a legenda sobe */
+  .item:hover .legenda {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .legenda strong { display: block; font-size: 14px; }
+  .legenda span { font-size: 13px; opacity: 0.9; }
+
+  @media (max-width: 600px) { .galeria { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h2>Galeria com efeito</h2>
+<p class="sub">A foto aumenta devagar e a legenda sobe de baixo.</p>
+
+<div class="galeria">
+  <div class="item">
+    <img src="https://picsum.photos/400/300?random=40" alt="">
+    <div class="legenda"><strong>Foto 1</strong><span>Passa o rato</span></div>
+  </div>
+
+  <div class="item">
+    <img src="https://picsum.photos/400/300?random=41" alt="">
+    <div class="legenda"><strong>Foto 2</strong><span>Passa o rato</span></div>
+  </div>
+
+  <div class="item">
+    <img src="https://picsum.photos/400/300?random=42" alt="">
+    <div class="legenda"><strong>Foto 3</strong><span>Passa o rato</span></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; margin: 0; background: #f9f9f9; padding: 20px; }
+  h2 { margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+  /* CONTAINER DA PÁGINA */
+  .pagina {
+    max-width: 600px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative; /* para o botão ficar dentro se quiser */
+  }
+
+  /* 1. CABEÇALHO FIXO */
+  .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    background: white;
+
+    /* O TRUQUE: gruda no topo */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .cabecalho strong { font-size: 16px; }
+  .cabecalho span { color: #777; font-size: 14px; }
+
+  .conteudo { padding: 20px; }
+  .conteudo p { color: #777; line-height: 1.6; margin: 0 0 24px 0; }
+
+  /* 2. BOTÃO NO CANTO - FIXO NA TELA */
+  .botao-topo {
+    position: fixed; /* fica fixo na tela, não na página */
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 20;
+  }
+</style>
+</head>
+<body>
+
+<h2>Cabeçalho fixo</h2>
+<p class="sub">Desce a página para ver o cabeçalho colado ao topo e o botão no canto.</p>
+
+<div class="pagina">
+  <div class="cabecalho">
+    <strong>Cabeçalho fixo</strong>
+    <span>Desce a página</span>
+  </div>
+
+  <div class="conteudo">
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+    <p>Este é um parágrafo de exemplo para a página ficar comprida. Desce para veres o cabeçalho colado ao topo e o botão no canto.</p>
+  </div>
+</div>
+
+<button class="botao-topo" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Topo</button>
+
+</body>
+</html>

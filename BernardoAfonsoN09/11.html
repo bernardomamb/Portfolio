@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* AQUI ESTÃO AS 3 VARIÁVEIS - MUDA AQUI E TUDO MUDA */
+  :root {
+    --cor-fundo: #111111;  /* 1. cor principal */
+    --raio: 14px;          /* 2. arredondamento */
+    --espaco: 16px;        /* 3. espaçamento */
+  }
+
+  body { font-family: sans-serif; padding: 24px; background: #f9f9f9; }
+  h2 { margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+  .painel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco);
+    max-width: 600px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: var(--raio); /* usa a variável */
+    padding: var(--espaco);     /* usa a variável */
+  }
+
+  .card strong { font-size: 22px; display: block; }
+  .card span { color: #777; font-size: 14px; margin-top: 6px; display: block; }
+
+  .relatorio {
+    grid-column: span 3;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: var(--raio);
+    padding: var(--espaco);
+  }
+  .relatorio strong { display: block; margin-bottom: 8px; }
+  .relatorio p { color: #777; font-size: 14px; margin: 0 0 14px 0; }
+
+  .btn {
+    background: var(--cor-fundo); /* usa a variável */
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* EXEMPLO: se mudar aqui, vira tema claro */
+  /* Tenta trocar no :root lá em cima para:
+  --cor-fundo: #4f46e5;
+  --raio: 24px;
+  --espaco: 20px;
+  */
+</style>
+</head>
+<body>
+
+<h2>Painel com tema por variáveis</h2>
+<p class="sub">Muda só os 3 valores do :root e o painel inteiro muda de aspeto.</p>
+
+<div class="painel">
+  <div class="card">
+    <strong>1 240</strong>
+    <span>Visitas</span>
+  </div>
+  <div class="card">
+    <strong>86</strong>
+    <span>Vendas</span>
+  </div>
+  <div class="card">
+    <strong>4,8</strong>
+    <span>Avaliação</span>
+  </div>
+
+  <div class="relatorio">
+    <strong>Relatório do mês</strong>
+    <p>Tudo aqui depende das três variáveis.</p>
+    <button class="btn">Ver detalhes</button>
+  </div>
+</div>
+
+</body>
+</html>

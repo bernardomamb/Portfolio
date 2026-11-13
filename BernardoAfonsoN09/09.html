@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+  h2 { margin: 0 0 4px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+  .cartao {
+    width: 320px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+    overflow: hidden; /* corta a imagem na borda redonda */
+  }
+
+  /* ÁREA DA IMAGEM - É O PAI DO SELO E DO TÍTULO */
+  .imagem-area {
+    position: relative; /* importante: os filhos absolute ficam dentro dele */
+    height: 220px;
+    background: #ddd;
+  }
+  .imagem-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 1. SELO NO CANTO */
+  .selo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* 2. GRADIENTE ESCURO POR CIMA DA IMAGEM */
+  .gradiente {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  /* 3. TÍTULO POR CIMA DA IMAGEM */
+  .titulo {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  /* RODAPÉ */
+  .rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+  }
+  .aulas { color: #777; font-size: 14px; }
+  .btn {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Cartão de curso</h2>
+<p class="sub">Selo no canto e título por cima da imagem.</p>
+
+<div class="cartao">
+  <div class="imagem-area">
+    <img src="https://picsum.photos/400/300?random=30" alt="curso">
+    <span class="selo">Novo</span>
+    <div class="gradiente"></div>
+    <div class="titulo">HTML e CSS do zero</div>
+  </div>
+  <div class="rodape">
+    <span class="aulas">12 aulas</span>
+    <button class="btn">Inscrever</button>
+  </div>
+</div>
+
+</body>
+</html>

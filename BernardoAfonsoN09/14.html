@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: sans-serif; padding: 24px; background: #fcfcfc; }
+  h2 { margin: 0 0 6px 0; }
+  .sub { color: #888; font-size: 14px; margin-bottom: 24px; }
+
+  .cartao {
+    width: 420px;
+    max-width: 100%;
+    padding: 28px 32px;
+    border-radius: 18px;
+    border: 1px solid #e8e8e8;
+
+    /* 1. FUNDO COM DEGRADÊ */
+    background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%);
+
+    /* 2. SOMBRA EM DUAS CAMADAS */
+    box-shadow: 
+      0 2px 10px rgba(0,0,0,0.06),   /* sombra pequena e perto */
+      0 12px 30px rgba(0,0,0,0.10);  /* sombra grande e longe */
+  }
+
+  /* 3. TEXTO COM DEGRADÊ */
+  .titulo {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 14px 0;
+    
+    /* truque do texto degradê */
+    background: linear-gradient(90deg, #111 0%, #777 100%);
+    -webkit-background-clip: text; /* recorta o fundo no formato do texto */
+    -webkit-text-fill-color: transparent; /* deixa o texto transparente pra ver o fundo */
+    background-clip: text;
+  }
+
+  .texto {
+    color: #777;
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 0 0 20px 0;
+  }
+
+  /* 4. BOTÃO COM DEGRADÊ */
+  .btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #222 0%, #555 50%, #111 100%);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    transition: transform 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<h2>Cartão com degradês</h2>
+<p class="sub">Fundo, texto e botão com degradês, e sombras em duas camadas.</p>
+
+<div class="cartao">
+  <h3 class="titulo">Cria sem limites</h3>
+  <p class="texto">Degradês bem usados dão profundidade sem precisar de imagens.</p>
+  <button class="btn">Começar agora</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+let frase = prompt("Digite uma frase:");
+
+let resultado = "";
+
+for (let i = 0; i < frase.length; i++) {
+
+    if (i % 2 === 0) {
+
+        resultado += frase[i].toLowerCase();
+
+    } else {
+
+        resultado += frase[i].toUpperCase();
+
+    }
+
+}
+
+alert(resultado);
+
+</script>
+
+</body>
+</html>
